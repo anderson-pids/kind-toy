@@ -25,14 +25,6 @@ spec:
             failureThreshold: 3
             timeoutSeconds: 1
             successThreshold: 1
-          env:
-            - name: Name
-              valueFrom:
-                configMapKeyRef:
-                  name: goserver-env
-                  key: Name 
-            - name: Age
-              valueFrom:
-                configMapKeyRef:
-                  name: goserver-env
-                  key: Age 
+          envFrom:
+            - configMapRef:
+                name: goserver-env
