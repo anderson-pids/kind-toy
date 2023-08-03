@@ -16,7 +16,15 @@ spec:
     spec:
       containers:
         - name: goserver
-          image: "andersonpids/hello-go:v2"
+          image: "andersonpids/hello-go:v3"
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            periodSeconds: 5
+            failureThreshold: 3
+            timeoutSeconds: 1
+            successThreshold: 1
           env:
             - name: Name
               valueFrom:

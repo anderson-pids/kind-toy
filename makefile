@@ -1,4 +1,4 @@
-VERSION=v2
+VERSION=v3
 APP_NAME=hello-go
 build:
 	@docker build -t andersonpids/${APP_NAME}:${VERSION} .
